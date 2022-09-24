@@ -1,0 +1,18 @@
+<html>
+<body>
+<form [formGroup]="tempGroup" (submit)="set()">
+<input type="text" formControlName="id"><br>
+<input type="text" formControlName="value"><br>
+<input type="submit" value="save in storage">
+</form>
+<br>
+<button (click)="get()">Get</button><br>
+<span *ngIf="id && value">
+    id :- {{id}}
+    value :- {{value}}
+</span>
+<br>
+<button (click)="delete()">delete</button>
+
+</body>
+</html>

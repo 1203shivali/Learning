@@ -1,0 +1,34 @@
+<html>
+<body>
+<p-table [value]="vendors" responsiveLayout="scroll" [paginator]="true" [rows]="5" [showCurrentPageReport]="true" currentPageReportTemplate="showing {first} to {last} of records {totalRecords}">
+  <!-- 
+    paginator - takes boolean , allows pagination
+    rows - takes number input , sets number
+    showcurrentpagereport - boolean, enables page reporting 
+    current page report - report
+  -->
+  <ng-template pTemplate="header">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Number</th>
+        <th>EDIT</th>
+        <th>VIEW</th>
+        <th>DELETE</th>
+    </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-v>
+      <tr>
+        <td>{{v.vendorId}}</td>
+        <td>{{v.vendorName}}</td>
+        <td>{{v.vendorEmail}}</td>
+        <td>{{v.vendorNumber}}</td>
+      </tr>
+    </ng-template>
+    <ng-template ptemplate="paginatorleft">
+      <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-table>
+</body>
+</html>
