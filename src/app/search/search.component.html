@@ -1,0 +1,21 @@
+<fieldset class="field-container mb-3">
+  <input
+    (focus)="focus.emit()"
+    (blur)="blur.emit()"
+    (keyup.enter)="search.emit(searchInput.value)" 
+    type="text"
+    placeholder="Search..."
+    class="field"
+    #searchInput>
+  <div class="icons-container">
+    <div 
+      (click)="search.emit(searchInput.value)" 
+      class="icon-search"></div>
+    <div
+      (click)="search.emit('')"
+      class="icon-close">
+      <div class="x-up"></div>
+      <div class="x-down"></div>
+    </div>
+  </div>
+</fieldset>

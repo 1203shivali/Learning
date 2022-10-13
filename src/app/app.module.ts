@@ -26,6 +26,10 @@ import { SignMComponent } from './vendor/sign-m/sign-m.component';
 import { SignUComponent } from './vendor/sign-u/sign-u.component';
 import { DashboardComponent } from './vendor/dashboard/dashboard.component';
 import { OrdersComponent } from './vendor/orders/orders.component';
+import { AboutComponent } from './Quiz/about/about.component';
+import { BlogComponent } from './Quiz/blog/blog.component';
+import { ContactComponent } from './Quiz/contact/contact.component';
+
 
 
 
@@ -56,7 +60,10 @@ import { OrdersComponent } from './vendor/orders/orders.component';
               SignMComponent,
               SignUComponent,
               DashboardComponent,
-              OrdersComponent
+              OrdersComponent,
+              AboutComponent,
+              BlogComponent,
+              ContactComponent
             
   
   

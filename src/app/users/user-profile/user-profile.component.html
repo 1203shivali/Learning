@@ -1,0 +1,49 @@
+<navbar></navbar>
+
+<div *ngIf="user && savedUser">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/users">Users</a></li>
+      <li class="breadcrumb-item"><a [routerLink]="['/users/', user.id]">{{ user.id }}</a></li>
+    </ol>
+  </nav>
+  <header class="jumbotron mb-0">
+  <div class="container">
+      <img [src]="user.displayAvatarURL">
+      <h1>{{ user.username }}<span class="text-muted">#{{ user.discriminator }}</span></h1>
+      <p class="lead">
+        <span
+          *ngIf="savedUser.role === 'admin'"
+          matTooltip="Admin"
+          class="badge badge-danger cursor-pointer mx-1">
+          <i class="fas fa-hammer"></i>
+        </span>
+        <span
+          *ngIf="savedUser.badges.includes('BETA_TESTER')"
+          matTooltip="Beta Tester"
+          class="badge badge-info cursor-pointer mx-1">
+          <i class="fas fa-flask"></i>
+        </span>
+        <span
+          *ngIf="savedUser.badges.includes('OG')"
+          matTooltip="OG"
+          class="badge badge-primary cursor-pointer mx-1">
+          <i class="fas fa-meteor"></i>
+        </span>
+      </p>
+  </div>
+  </header>
+  <waves [inverted]="true"></waves>
+
+  <div id="bots" class="container">
+    <bots [ownerUser]="user"></bots>
+    <packs [ownerUser]="user"></packs>
+  </div>
+</div>
+
+<div *ngIf="!user"
+  class="container">
+  <spinner></spinner>
+</div>
+
+<home-footer></home-footer>
